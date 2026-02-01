@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+public struct APIEndpointModel {
+    let url: URL
+    let APIKey: String
+    let APIToken: String?
+}

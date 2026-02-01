@@ -9,7 +9,34 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+
+            PopularNewsView()
+                .tabItem {
+                    Label("Titulares", systemImage: "newspaper.fill")
+                }
+
+            ProfileView()
+                .tabItem {
+                    Label("Perfil", systemImage: "person.text.rectangle.fill")
+                }
+        }
+        .accentColor(.blue) 
+    }
+}
+
+
+struct ProfileView: View {
+    var body: some View {
+        NavigationStack {
+            List {
+                Section(header: Text("Usuario")) {
+                    Text("Configuración de Perfil")
+                    Text("Notificaciones")
+                }
+            }
+            .navigationTitle("Perfil")
+        }
     }
 }
 
